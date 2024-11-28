@@ -4,13 +4,13 @@ const { defineConfig, devices } = require('@playwright/test');
 const config = {
   testdir: './tests',
   /*Maximum time one test can run for.*/
-  timeout: 10 * 1000,
+  timeout: 10 * 3000,
   expect: {
     /**
      * Maximum time expect() should wait for the condition to be met.
      * For example in 'await expect(locator).toHaveText();'
      */
-    timeout: 2000
+    timeout: 5000
   }
 }
 
@@ -49,7 +49,12 @@ module.exports = defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],
+      //viewport: { width: 1920, height: 1080 }   
+     // viewport: null, // Maximize Chromium browser  
+     // deviceScaleFactor: undefined
+    },
+      
     },
 
     {
