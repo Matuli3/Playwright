@@ -20,7 +20,7 @@ test('Heureka Basket roulette 1', async ({ page }) => {
     await page1.locator('li').filter({ hasText: 'LG ART 51LGBezdrôtový systém' }).getByTestId('product-button').click();
     const page2 = await page2Promise;
 
-    await page.pause()
+   // await page.pause()
     await page.locator('li').filter({ hasText: 'Top 1JBL Charge 597 %117' }).getByTestId('product-button').click();
     await page.getByLabel('Vyberte variantu').selectOption('zelené');
   //  await page.goto('https://bluetooth-reproduktory.heureka.sk/jbl-charge-5/#prehlad/?offers-attr-filter=Farba:zelen%C3%A9');
