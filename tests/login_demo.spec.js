@@ -41,6 +41,7 @@ test.only('Demo Login Test 3', async ({ page }) => {
     await page.getByLabel('Password:').click();
     await page.getByLabel('Password:').press('ControlOrMeta+a');
     await page.getByRole('button', { name: 'Log in' }).click();
+    await page.waitForTimeout(5000);
     await page.close()
 
 })
